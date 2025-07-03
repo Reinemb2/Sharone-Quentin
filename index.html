@@ -24,7 +24,7 @@
     .banner {
       width: 100%;
       height: 300px;
-      object-fit: cover;
+      background-color: #d1008f;
     }
 
     header h1 {
@@ -43,13 +43,23 @@
       background-color: #fce4f0;
       text-align: center;
       padding: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
     }
 
     nav a {
-      margin: 0 15px;
       text-decoration: none;
       color: #d1008f;
       font-weight: bold;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    nav a:hover {
+      background-color: #f8cde4;
     }
 
     .verset {
@@ -105,7 +115,7 @@
       background-color: #a0006b;
     }
 
-    .liste-invites, .infos-pratiques {
+    .liste-invites {
       display: none;
     }
 
@@ -123,6 +133,10 @@
 
     th {
       background-color: #fce4f0;
+    }
+
+    .infos-pratiques {
+      display: block;
     }
 
     .infos-pratiques ul {
@@ -149,12 +163,26 @@
       margin-left: auto;
       margin-right: auto;
     }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px 0;
+      }
+
+      nav a {
+        display: inline-block;
+        width: 90%;
+        font-size: 1em;
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="0E3E9497-A819-4F27-82F6-1C1630C8B797.jpeg" alt="Sharone et Quentin" class="banner">
+    <div class="banner"></div>
     <h1>Sharone & Quentin</h1>
     <h2>13 septembre 2025</h2>
     <p class="verset">« Ainsi, ils ne sont plus deux, mais ils ne font qu’un. Que l’homme ne sépare donc pas ce que Dieu a uni. »<br><strong>Matthieu 19:6</strong></p>
@@ -208,12 +236,12 @@
   <div class="container infos-pratiques" id="hebergements">
     <h3>Hébergements à proximité</h3>
     <ul>
-      <li><a href="https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fwww.domainedelosage.com&umid=add98d1f-b12e-42d5-b68d-5c5100bcda9c&rct=1751395228&auth=f5e9e15151c35f4f227bcc54709f577ec3cfed82-e0dfdeee0f4b57c562dfb084033819b7dcbbf88e" target="_blank" rel="noopener noreferrer">Domaine de Losage</a></li>
-      <li><a href="https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fwww.domaineceladon.com&umid=add98d1f-b12e-42d5-b68d-5c5100bcda9c&rct=1751395228&auth=f5e9e15151c35f4f227bcc54709f577ec3cfed82-1e45f184f5d4b98414d7d61c203b2f3a10eda083" target="_blank" rel="noopener noreferrer">Domaine Céladon</a></li>
-      <li><a href="https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fwww.vacances%2dauthentiques.com%2fresidences%2faigueze%2dle%2dcastelas%2f%22&umid=add98d1f-b12e-42d5-b68d-5c5100bcda9c&rct=1751395228&auth=f5e9e15151c35f4f227bcc54709f577ec3cfed82-2c9bad2444126f902be57f5e30bcbe1658635a6b target="_blank" rel="noopener noreferrer">Résidences Aiguèze Le Castelas</a></li>
-      <li><a href="https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fwww.mastrankil.com&umid=add98d1f-b12e-42d5-b68d-5c5100bcda9c&rct=1751395228&auth=f5e9e15151c35f4f227bcc54709f577ec3cfed82-539dc964e094296c66932b762854e5ecc0f1a7f1" target="_blank" rel="noopener noreferrer">Domaine MasTrankil</a></li>
-      <li><a href="https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fwww.leschambresdelabourse.fr&umid=add98d1f-b12e-42d5-b68d-5c5100bcda9c&rct=1751395228&auth=f5e9e15151c35f4f227bcc54709f577ec3cfed82-8fde7b0dec643aa5fd9f2183d6deb731f5bf14a8" target="_blank" rel="noopener noreferrer">Les Chambres de La Bourse</a></li>
-      <li><a href="https://ddec1-0-en-ctp.trendmicro.com:443/wis/clicktime/v1/query?url=https%3a%2f%2fg.co%2fkgs%2fomTqXP2%22&umid=add98d1f-b12e-42d5-b68d-5c5100bcda9c&rct=1751395228&auth=f5e9e15151c35f4f227bcc54709f577ec3cfed82-4a1a9a159ecb032c312fec8dd2de5f3a640afa8a target="_blank" rel="noopener noreferrer">Voir sur Google Maps</a></li>
+      <li><a href="https://www.domainedelosage.com" target="_blank">Domaine de Losage</a></li>
+      <li><a href="https://www.domaineceladon.com" target="_blank">Domaine Céladon</a></li>
+      <li><a href="https://www.vacances-authentiques.com/residences/aigueze-le-castelas/" target="_blank">Résidences Aiguèze Le Castelas</a></li>
+      <li><a href="https://www.mastrankil.com" target="_blank">Domaine MasTrankil</a></li>
+      <li><a href="https://www.leschambresdelabourse.fr" target="_blank">Les Chambres de La Bourse</a></li>
+      <li><a href="https://g.co/kgs/omTqXP2" target="_blank">Voir sur Google Maps</a></li>
     </ul>
   </div>
 
@@ -239,7 +267,7 @@
 
     function verifierMotDePasse() {
       const mdp = document.getElementById("password").value;
-      if (mdp === "SharoneQuentinetDieu") { 
+      if (mdp === "SharoneQuentinetDieu") {
         document.getElementById("liste-invites").style.display = "block";
         document.getElementById("acces-prive").style.display = "none";
       } else {
