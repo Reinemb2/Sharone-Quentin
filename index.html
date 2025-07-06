@@ -62,16 +62,17 @@
       gap: 10px;
     }
 
-    nav a {
-      text-decoration: none;
+    .menu-item {
+      display: inline-block;
       color: #d1008f;
       font-weight: bold;
       padding: 10px 14px;
       border-radius: 6px;
       transition: background 0.2s;
+      cursor: default;
     }
 
-    nav a:hover {
+    .menu-item:hover {
       background-color: #f8cde4;
     }
 
@@ -175,9 +176,10 @@
         padding: 15px 0;
       }
 
-      nav a {
+      .menu-item {
         width: 90%;
         font-size: 1em;
+        text-align: center;
       }
     }
   </style>
@@ -193,14 +195,14 @@
   </header>
 
   <nav>
-    <a href="#rsvp">RSVP</a>
-    <a href="#hebergements">Hébergements à proximité</a>
-    <a href="#acces-prive">Liste privée</a>
+    <span class="menu-item">RSVP</span>
+    <span class="menu-item">Hébergements à proximité</span>
+    <span class="menu-item">Liste privée</span>
   </nav>
 
   <div class="container" id="rsvp">
     <div class="intro">
-      Merci de renseigner votre <strong>prénom, nom et e-mail</strong>, puis de cocher <strong>Oui</strong> ou <strong>Non</strong>. Cela nous aidera à mieux organiser la fête.
+      Merci de renseigner votre <strong>prénom, nom et e-mail</strong>, puis de cocher <strong>Oui</strong> ou <strong>Non</strong>. Cela nous aidera à mieux organiser la fête!!
     </div>
 
     <form id="rsvp-form">
@@ -245,7 +247,7 @@
       <li><a href="https://www.vacances-authentiques.com/residences/aigueze-le-castelas/" target="_blank">Résidences Aiguèze Le Castelas</a></li>
       <li><a href="https://www.mastrankil.com" target="_blank">Domaine MasTrankil</a></li>
       <li><a href="https://www.leschambresdelabourse.fr" target="_blank">Les Chambres de La Bourse</a></li>
-      <li><a href="https://g.co/kgs/omTqXP2" target="_blank">Voir sur Google Maps</a></li>
+      <li><a href="https://g.co/kgs/omTqXP2" target="_blank"> Hôtel du Commerce </a></li>
     </ul>
   </div>
 
