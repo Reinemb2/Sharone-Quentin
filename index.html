@@ -4,12 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sharone & Quentin - Mariage</title>
-  <base href="/" />
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #fff;
@@ -17,12 +13,7 @@
       margin: 0;
       padding: 0;
     }
-
-    header {
-      margin: 0;
-      padding: 0;
-    }
-
+    header { margin: 0; padding: 0; }
     .banner {
       width: 100%;
       background-color: #d1008f;
@@ -30,18 +21,8 @@
       text-align: center;
       padding: 40px 20px;
     }
-
-    .banner h1 {
-      font-size: 2.5em;
-      margin: 0;
-    }
-
-    .banner h2 {
-      font-weight: normal;
-      font-size: 1.2em;
-      margin: 8px 0 0;
-    }
-
+    .banner h1 { font-size: 2.5em; margin: 0; }
+    .banner h2 { font-weight: normal; font-size: 1.2em; margin: 8px 0 0; }
     .verset {
       font-style: italic;
       font-size: 1.1em;
@@ -51,7 +32,6 @@
       color: #d1008f;
       text-align: center;
     }
-
     nav {
       background-color: #fce4f0;
       text-align: center;
@@ -61,7 +41,6 @@
       justify-content: center;
       gap: 10px;
     }
-
     .menu-item {
       display: inline-block;
       color: #d1008f;
@@ -71,30 +50,23 @@
       transition: background 0.2s;
       cursor: default;
     }
-
-    .menu-item:hover {
-      background-color: #f8cde4;
-    }
-
+    .menu-item:hover { background-color: #f8cde4; }
     .container {
       max-width: 600px;
       margin: 40px auto;
       padding: 0 20px;
     }
-
     .intro {
       font-size: 1em;
       text-align: center;
       margin-bottom: 30px;
     }
-
     form {
       background-color: #fdf6fb;
       border: 1px solid #ffd5ee;
       padding: 25px;
       border-radius: 10px;
     }
-
     input, select {
       width: 100%;
       padding: 12px;
@@ -103,7 +75,6 @@
       border-radius: 8px;
       font-size: 1em;
     }
-
     button {
       width: 100%;
       padding: 12px;
@@ -115,48 +86,15 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-
-    button:hover {
-      background-color: #a0006b;
-    }
-
-    .liste-invites {
-      display: none;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 15px;
-    }
-
-    th, td {
-      border: 1px solid #eee;
-      padding: 10px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #fce4f0;
-    }
-
-    .infos-pratiques {
-      display: block;
-    }
-
-    .infos-pratiques ul {
-      padding-left: 20px;
-    }
-
+    button:hover { background-color: #a0006b; }
+    .liste-invites { display: none; }
+    .infos-pratiques { display: block; }
+    .infos-pratiques ul { padding-left: 20px; }
     .infos-pratiques a {
       color: #d1008f;
       text-decoration: none;
     }
-
-    .infos-pratiques a:hover {
-      text-decoration: underline;
-    }
-
+    .infos-pratiques a:hover { text-decoration: underline; }
     .password-form {
       margin-top: 40px;
       background-color: #fdf6fb;
@@ -168,14 +106,12 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     @media (max-width: 600px) {
       nav {
         flex-direction: column;
         gap: 10px;
         padding: 15px 0;
       }
-
       .menu-item {
         width: 90%;
         font-size: 1em;
@@ -191,7 +127,10 @@
       <h1>Sharone & Quentin</h1>
       <h2>13 septembre 2025</h2>
     </div>
-    <p class="verset">« Ainsi, ils ne sont plus deux, mais ils ne font qu’un. Que l’homme ne sépare donc pas ce que Dieu a uni. »<br><strong>Matthieu 19:6</strong></p>
+    <p class="verset">
+      « Ainsi, ils ne sont plus deux, mais ils ne font qu’un. Que l’homme ne sépare donc pas ce que Dieu a uni. »<br>
+      <strong>Matthieu 19:6</strong>
+    </p>
   </header>
 
   <nav>
@@ -202,7 +141,7 @@
 
   <div class="container" id="rsvp">
     <div class="intro">
-      Merci de renseigner votre <strong>prénom, nom et e-mail</strong>, puis de cocher <strong>Oui</strong> ou <strong>Non</strong>. Cela nous aidera à mieux organiser la fête!!
+      Merci de renseigner votre <strong>prénom, nom et e-mail</strong>, puis de cocher <strong>Oui</strong> ou <strong>Non</strong>. Cela nous aidera à mieux organiser la fête !!
     </div>
 
     <form id="rsvp-form">
@@ -224,21 +163,6 @@
     <button onclick="verifierMotDePasse()">Voir la liste des invités</button>
   </div>
 
-  <div class="container liste-invites" id="liste-invites">
-    <h3>Liste des invités :</h3>
-    <table id="invites-table">
-      <thead>
-        <tr>
-          <th>Prénom</th>
-          <th>Nom</th>
-          <th>Email</th>
-          <th>Présence</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
-
   <div class="container infos-pratiques" id="hebergements">
     <h3>Hébergements à proximité</h3>
     <ul>
@@ -247,36 +171,49 @@
       <li><a href="https://www.vacances-authentiques.com/residences/aigueze-le-castelas/" target="_blank">Résidences Aiguèze Le Castelas</a></li>
       <li><a href="https://www.mastrankil.com" target="_blank">Domaine MasTrankil</a></li>
       <li><a href="https://www.leschambresdelabourse.fr" target="_blank">Les Chambres de La Bourse</a></li>
-      <li><a href="https://g.co/kgs/omTqXP2" target="_blank"> Hôtel du Commerce </a></li>
+      <li><a href="https://g.co/kgs/omTqXP2" target="_blank">Hôtel du Commerce</a></li>
     </ul>
   </div>
 
   <script>
     const form = document.getElementById("rsvp-form");
-    const tableBody = document.querySelector("#invites-table tbody");
 
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
+
       const prenom = document.getElementById("prenom").value.trim();
       const nom = document.getElementById("nom").value.trim();
       const email = document.getElementById("email").value.trim();
       const presence = document.getElementById("presence").value;
 
       if (prenom && nom && email && presence) {
-        const newRow = document.createElement("tr");
-        newRow.innerHTML = `<td>${prenom}</td><td>${nom}</td><td>${email}</td><td>${presence}</td>`;
-        tableBody.appendChild(newRow);
-        form.reset();
-        alert("Merci pour votre réponse !");
+        const data = { prenom, nom, email, presence };
+
+        try {
+          const response = await fetch("https://script.google.com/macros/s/AKfycbzsOjqKx94YX4VCOHJ92Z3MV41ip4R-oj3SWXR8FSuURQAi2b40_AqSHZ5NoNxvqasz/exec", {
+            method: "POST",
+            body: JSON.stringify(data),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
+
+          if (response.ok) {
+            alert("Merci pour votre réponse !");
+            form.reset();
+          } else {
+            alert("Erreur lors de l'envoi. Veuillez réessayer.");
+          }
+        } catch (error) {
+          alert("Erreur de connexion. Veuillez vérifier votre accès Internet.");
+        }
       }
     });
 
     function verifierMotDePasse() {
       const mdp = document.getElementById("password").value;
       if (mdp === "SharoneQuentinetDieu") {
-        document.getElementById("liste-invites").style.display = "block";
-        document.getElementById("acces-prive").style.display = "none";
-        document.getElementById("liste-invites").scrollIntoView({ behavior: "smooth" });
+        window.open("https://docs.google.com/spreadsheets/d/1xhj-ngFVcr2M9hNl_RXDdWz6rpwR9jkXgkSOAGOCoZU/edit", "_blank");
       } else {
         alert("Mot de passe incorrect.");
       }
