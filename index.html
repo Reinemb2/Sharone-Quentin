@@ -1,95 +1,223 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>RSVP Mariage Sharone & Quentin</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sharone & Quentin - Mariage</title>
+  <base href="/" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      padding: 30px;
+    html {
+      scroll-behavior: smooth;
     }
 
-    h1, h3 {
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      margin: 0;
+      padding: 0;
+    }
+
+    .banner {
+      width: 100%;
+      background-color: #d1008f;
+      color: white;
       text-align: center;
-      color: #003366;
+      padding: 40px 20px;
+    }
+
+    .banner h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    .banner h2 {
+      font-weight: normal;
+      font-size: 1.2em;
+      margin: 8px 0 0;
+    }
+
+    .verset {
+      font-style: italic;
+      font-size: 1.1em;
+      max-width: 700px;
+      margin: 20px auto;
+      padding: 10px 20px;
+      color: #d1008f;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #fce4f0;
+      text-align: center;
+      padding: 10px 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .menu-item {
+      display: inline-block;
+      color: #d1008f;
+      font-weight: bold;
+      padding: 10px 14px;
+      border-radius: 6px;
+      transition: background 0.2s;
+      cursor: default;
+    }
+
+    .menu-item:hover {
+      background-color: #f8cde4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .intro {
+      font-size: 1em;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     form {
-      background-color: #fff;
-      padding: 20px;
-      margin: auto;
-      width: 100%;
-      max-width: 500px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background-color: #fdf6fb;
+      border: 1px solid #ffd5ee;
+      padding: 25px;
+      border-radius: 10px;
     }
 
-    label {
-      display: block;
-      margin-top: 15px;
-    }
-
-    input, select, button {
+    input, select {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
+      padding: 12px;
+      margin: 10px 0;
       border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 16px;
+      border-radius: 8px;
+      font-size: 1em;
     }
 
     button {
-      background-color: #004080;
+      width: 100%;
+      padding: 12px;
+      background-color: #d1008f;
       color: white;
       border: none;
+      border-radius: 8px;
+      font-size: 1em;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     button:hover {
-      background-color: #0066cc;
+      background-color: #a0006b;
     }
 
-    #access-section {
-      margin-top: 50px;
+    .liste-invites {
+      display: none;
+    }
+
+    .infos-pratiques {
+      display: block;
+    }
+
+    .infos-pratiques ul {
+      padding-left: 20px;
+    }
+
+    .infos-pratiques a {
+      color: #d1008f;
+      text-decoration: none;
+    }
+
+    .infos-pratiques a:hover {
+      text-decoration: underline;
+    }
+
+    .password-form {
+      margin-top: 40px;
+      background-color: #fdf6fb;
+      padding: 20px;
+      border: 1px solid #ffd5ee;
+      border-radius: 10px;
       text-align: center;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
-    #password {
-      width: 300px;
-      max-width: 100%;
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px 0;
+      }
+
+      .menu-item {
+        width: 90%;
+        font-size: 1em;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
-  <h1>Répondez à notre invitation 💌</h1>
+  <header>
+    <div class="banner">
+      <h1>Sharone & Quentin</h1>
+      <h2>13 septembre 2025</h2>
+    </div>
+    <p class="verset">« Ainsi, ils ne sont plus deux, mais ils ne font qu’un. Que l’homme ne sépare donc pas ce que Dieu a uni. »<br><strong>Matthieu 19:6</strong></p>
+  </header>
 
-  <form id="rsvp-form">
-    <label for="prenom">Prénom :</label>
-    <input type="text" id="prenom" name="prenom" required>
+  <nav>
+    <span class="menu-item">RSVP</span>
+    <span class="menu-item">Hébergements à proximité</span>
+    <span class="menu-item">Accès privé</span>
+  </nav>
 
-    <label for="nom">Nom :</label>
-    <input type="text" id="nom" name="nom" required>
+  <div class="container" id="rsvp">
+    <div class="intro">
+      Merci de renseigner votre <strong>prénom, nom et e-mail</strong>, puis de cocher <strong>Oui</strong> ou <strong>Non</strong>. Cela nous aidera à mieux organiser la fête !
+    </div>
 
-    <label for="email">Email :</label>
-    <input type="email" id="email" name="email" required>
+    <form id="rsvp-form">
+      <input type="text" id="prenom" placeholder="Prénom" required />
+      <input type="text" id="nom" placeholder="Nom" required />
+      <input type="email" id="email" placeholder="Adresse email" required />
+      <select id="presence" required>
+        <option value="">Serez-vous présent(e) ?</option>
+        <option value="Oui">Oui</option>
+        <option value="Non">Non</option>
+      </select>
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
 
-    <label for="presence">Serez-vous présent(e) ?</label>
-    <select id="presence" name="presence" required>
-      <option value="">-- Sélectionnez une option --</option>
-      <option value="Oui">Oui</option>
-      <option value="Non">Non</option>
-    </select>
+  <div class="container password-form" id="acces-prive">
+    <h3>Accès réservé aux mariés</h3>
+    <input type="password" id="password" placeholder="Mot de passe" />
+    <button onclick="verifierMotDePasse()">Voir la liste des invités</button>
+  </div>
 
-    <button type="submit">Envoyer</button>
-  </form>
-
-  <div id="access-section">
-    <h3>Accès à la feuille de réponses (réservé aux mariés)</h3>
-    <input type="password" id="password" placeholder="Mot de passe">
-    <br><br>
-    <button onclick="verifierMotDePasse()">Accéder à la feuille</button>
+  <div class="container infos-pratiques" id="hebergements">
+    <h3>Hébergements à proximité</h3>
+    <ul>
+      <li><a href="https://www.domainedelosage.com" target="_blank">Domaine de Losage</a></li>
+      <li><a href="https://www.domaineceladon.com" target="_blank">Domaine Céladon</a></li>
+      <li><a href="https://www.vacances-authentiques.com/residences/aigueze-le-castelas/" target="_blank">Résidences Aiguèze Le Castelas</a></li>
+      <li><a href="https://www.mastrankil.com" target="_blank">Domaine MasTrankil</a></li>
+      <li><a href="https://www.leschambresdelabourse.fr" target="_blank">Les Chambres de La Bourse</a></li>
+      <li><a href="https://g.co/kgs/omTqXP2" target="_blank">Hôtel du Commerce</a></li>
+    </ul>
   </div>
 
   <script>
@@ -116,13 +244,13 @@
           });
 
           if (response.ok) {
-            alert("Merci pour votre réponse ! ❤️");
+            alert("Merci pour votre réponse !");
             form.reset();
           } else {
             alert("Erreur lors de l'envoi. Veuillez réessayer.");
           }
         } catch (error) {
-          alert("Erreur de connexion. Vérifiez votre Internet.");
+          alert("Erreur de connexion. Veuillez vérifier votre accès Internet.");
         }
       }
     });
@@ -136,5 +264,6 @@
       }
     }
   </script>
+
 </body>
 </html>
