@@ -1,113 +1,95 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sharone & Quentin - Mariage</title>
+  <meta charset="UTF-8">
+  <title>RSVP Mariage Sharone & Quentin</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #333;
-      margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 30px;
     }
 
-    header, nav, .container {
-      padding: 20px;
+    h1, h3 {
       text-align: center;
-    }
-
-    .banner {
-      background-color: #d1008f;
-      color: white;
-      padding: 40px 20px;
-    }
-
-    .verset {
-      font-style: italic;
-      color: #d1008f;
-      margin-top: 10px;
-    }
-
-    nav {
-      background-color: #fce4f0;
-    }
-
-    .menu-item {
-      margin: 0 10px;
-      font-weight: bold;
-      color: #d1008f;
+      color: #003366;
     }
 
     form {
-      background-color: #fdf6fb;
-      border: 1px solid #ffd5ee;
+      background-color: #fff;
       padding: 20px;
-      border-radius: 10px;
-      max-width: 500px;
       margin: auto;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
     }
 
     input, select, button {
-      display: block;
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 8px;
+      padding: 10px;
+      margin-top: 5px;
       border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
     }
 
     button {
-      background-color: #d1008f;
+      background-color: #004080;
       color: white;
       border: none;
       cursor: pointer;
     }
 
-    .password-form {
-      max-width: 400px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #fdf6fb;
-      border: 1px solid #ffd5ee;
-      border-radius: 10px;
+    button:hover {
+      background-color: #0066cc;
+    }
+
+    #access-section {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    #password {
+      width: 300px;
+      max-width: 100%;
     }
   </style>
 </head>
 <body>
 
-  <header class="banner">
-    <h1>Sharone & Quentin</h1>
-    <h2>13 septembre 2025</h2>
-  </header>
-  <p class="verset">« Ainsi, ils ne sont plus deux, mais ils ne font qu’un. Que l’homme ne sépare donc pas ce que Dieu a uni. »<br><strong>Matthieu 19:6</strong></p>
+  <h1>Répondez à notre invitation 💌</h1>
 
-  <nav>
-    <span class="menu-item">RSVP</span>
-    <span class="menu-item">Hébergements</span>
-    <span class="menu-item">Liste privée</span>
-  </nav>
+  <form id="rsvp-form">
+    <label for="prenom">Prénom :</label>
+    <input type="text" id="prenom" name="prenom" required>
 
-  <div class="container">
-    <h3>Formulaire RSVP</h3>
-    <form id="rsvp-form">
-      <input type="text" id="prenom" placeholder="Prénom" required />
-      <input type="text" id="nom" placeholder="Nom" required />
-      <input type="email" id="email" placeholder="Email" required />
-      <select id="presence" required>
-        <option value="">Serez-vous présent(e) ?</option>
-        <option value="Oui">Oui</option>
-        <option value="Non">Non</option>
-      </select>
-      <button type="submit">Envoyer</button>
-    </form>
-  </div>
+    <label for="nom">Nom :</label>
+    <input type="text" id="nom" name="nom" required>
 
-  <div class="container password-form">
-    <h3>Accès réservé aux mariés</h3>
-    <input type="password" id="password" placeholder="Mot de passe" />
-    <button onclick="verifierMotDePasse()">Voir la feuille Google Sheets</button>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="presence">Serez-vous présent(e) ?</label>
+    <select id="presence" name="presence" required>
+      <option value="">-- Sélectionnez une option --</option>
+      <option value="Oui">Oui</option>
+      <option value="Non">Non</option>
+    </select>
+
+    <button type="submit">Envoyer</button>
+  </form>
+
+  <div id="access-section">
+    <h3>Accès à la feuille de réponses (réservé aux mariés)</h3>
+    <input type="password" id="password" placeholder="Mot de passe">
+    <br><br>
+    <button onclick="verifierMotDePasse()">Accéder à la feuille</button>
   </div>
 
   <script>
@@ -125,7 +107,7 @@
         const data = { prenom, nom, email, presence };
 
         try {
-          const response = await fetch("https://script.google.com/macros/s/AKfycbybwcTOFT88MTHmsOLFb_pY4p_2wUCD0N0WnkiQTbjwFV7cGHpfEBy2bd43rhHSqo2b/exec", {
+          const response = await fetch("https://script.google.com/macros/s/AKfycbxdNG6Istn1QI0wvE55hVEL_7nW5Qe2uWciVgxLCa4mdg8AchuHdrdz8_WNMu20nHXF/exec", {
             method: "POST",
             body: JSON.stringify(data),
             headers: {
@@ -134,7 +116,7 @@
           });
 
           if (response.ok) {
-            alert("Merci pour votre réponse !");
+            alert("Merci pour votre réponse ! ❤️");
             form.reset();
           } else {
             alert("Erreur lors de l'envoi. Veuillez réessayer.");
@@ -154,6 +136,5 @@
       }
     }
   </script>
-
 </body>
 </html>
